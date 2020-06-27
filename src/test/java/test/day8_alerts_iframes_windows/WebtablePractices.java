@@ -27,16 +27,27 @@ public class WebtablePractices {
     }
 
     @Test
-    public void p4_verifyOrder_test(){
+    public void p4_verifyOrder_test() throws InterruptedException{
         //Logging into smartbear
         SmartBearUtilities.login(driver);
 
+        Thread.sleep(1000);
+
         //Call my method the verify if given name is in the list or not.
-        SmartBearUtilities.verifyOrder(driver, "Ricky Martin");
+        SmartBearUtilities.verifyOrder(driver, "Paul Brown");
 
 
 
     }
+
+
+    @Test
+    public void p5_print_names_cities_test(){
+        SmartBearUtilities.login(driver);
+        SmartBearUtilities.printNamesAndCities(driver);
+
+    }
+
 
 
 

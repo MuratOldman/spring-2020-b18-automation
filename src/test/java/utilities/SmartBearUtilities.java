@@ -49,6 +49,24 @@ public class SmartBearUtilities {
 
     }
 
+    public static void printNamesAndCities(WebDriver driver){
+        // The list where we store all the names in the web table
+        List<WebElement> namesList = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//tr/td[2]"));
+
+        // The list where we store all of the cities in the web table
+        List<WebElement> citiesList = driver.findElements(By.xpath("//table[@id='ctl00_MainContent_orderGrid']//tr/td[7]"));
+
+        //instead of creating for-each loop, we will create regular for loop
+        //because we can use the int i index number to get both names and cities values
+
+        for (int i=0; i<namesList.size(); i++){
+
+            System.out.println("Name: " + namesList.get(i).getText() + ", Cities: " + citiesList.get(i).getText());
+
+        }
+
+    }
+
 
 
 
